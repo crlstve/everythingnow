@@ -1,0 +1,48 @@
+/*
+Theme Name: Everything Now
+Author: Carles Esteve
+Author URI: https://carlesteve.dev
+Description: A simple, elegant and uptimized theme created ad hoc
+Version: 0.1
+Requires at least: 6.4.3
+Tested up to: 6.4.3
+Requires PHP: 7.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: everythingnow
+Tags: simple, elegant, everything, now, tailwindcss,
+*/
+:root {
+    --bg-primary-color: white;
+    --bg-dark-gradient: linear-gradient(180deg, rgba(45,45,45,1) 0%, rgba(29,29,27,1) 100%);
+    --bg-secundary-color: ;
+    --btn-primary-color: #6C63FF;
+    --btn-hover-color: #5C56DB;
+    --font-primary-color: #1F2D52;
+}
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+    src: url(./assets/fonts/Poppins-Medium.ttf) format("truetype");
+}
+html {
+    scroll-behavior: smooth;
+}
+header, footer{
+	background: var(--bg-dark-gradient);
+}
+/*Mobile*/
+.wrap{
+	width:90%;
+	margin: 0 auto;
+}
+
+/*Desktop*/
+@media(min-width:1280px){
+	.wrap{
+		width:100%;
+		max-width:80rem;/*1280px*/
+	}
+}
