@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="wrap">
+<main class="wrap my-12 md:my-20">
 <h1><?php bloginfo( 'name' ); ?></h1>
 <h2><?php bloginfo( 'description' ); ?></h2>
 
@@ -27,7 +27,7 @@ previous_posts_link();
 
 <?php else: ?>
 
-<p>No posts found. :(</p>
+<p><?php _e('No hay post','now'); ?></p>
 
 <?php endif; ?>
 

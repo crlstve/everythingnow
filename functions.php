@@ -8,7 +8,8 @@ require get_template_directory() . '/classes/class-now-script-loader.php';
 
 // Now css
 	function now_register_styles() {
-		wp_enqueue_style( 'now-style', get_stylesheet_uri(), array(), '1.0' );
+		wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '1.0' );
+		wp_enqueue_style('now-style', get_stylesheet_directory_uri() . '/assets/css/now-style.css', array(), '1.0');
 		// TTAILWIND //
 			// CDN -> wp_enqueue_script('tailwind','https://cdn.tailwindcss.com');
 			wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/assets/css/tailwind-min.css', array(), '3.3.2');
