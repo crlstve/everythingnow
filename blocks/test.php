@@ -11,12 +11,10 @@ if( have_rows('test_1') ):
             $img = get_sub_field('img_1');
             $vid = get_sub_field('vid_1');
 ?>
- <div class="wrap flex flex-col gap-3">		
-	<h2 class="font-bold text-xl"><?php if($title){ echo $title; }?></h2>
-	<p class="text-base"><?php if($text){ echo $text; }?></p>
-	<?php if($img): ?>
-	<img src="<?php echo esc_url($img['url']); ?>" alt="<?=$img['alt']?>" title="<?=$img['title']?>">
-	<?php endif; ?>
+ <div class="wrap flex flex-col gap-3">
+    <?php if($title): ?><h2 class="font-bold text-xl"><?= $title;?></h2><?php endif; ?>
+    <?php if($text): ?><p class="text-base"><?= $text; ?></p><?php endif; ?>
+	<?php if($img): ?><img src="<?= esc_html_e($img['url']); ?>" alt="<?=$img['alt']?>" title="<?=$img['title']?>"><?php endif; ?>
 	<div class="w-full"><?= $vid ?></div>
  </div>
   <?php 

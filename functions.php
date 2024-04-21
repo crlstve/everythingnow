@@ -8,7 +8,7 @@ require get_template_directory() . '/classes/class-now-script-loader.php';
 
 // Now css
 	function now_register_styles() {
-		wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '1.0' );
+		wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '1.0' ); // -> No css, just meta info
 		wp_enqueue_style('now-style', get_stylesheet_directory_uri() . '/assets/css/now-style.css', array(), '1.0');
 		// TTAILWIND //
 			// CDN -> wp_enqueue_script('tailwind','https://cdn.tailwindcss.com');
@@ -22,8 +22,6 @@ require get_template_directory() . '/classes/class-now-script-loader.php';
 		wp_script_add_data( 'now-js', 'async', true );*/
 	}
 	add_action( 'wp_enqueue_scripts', 'now_register_scripts' );
-
-
 
 		function now_theme_support() {
 
