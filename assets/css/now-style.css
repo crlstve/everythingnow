@@ -1,0 +1,35 @@
+:root {
+    --bg-primary-color: white;
+    --bg-dark-gradient: linear-gradient(180deg, rgba(45,45,45,1) 0%, rgba(29,29,27,1) 100%);
+    --bg-secundary-color: ;
+    --btn-primary-color: #6C63FF;
+    --btn-hover-color: #5C56DB;
+    --font-primary-color: #1F2D52;
+}
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+    src: url(./assets/fonts/Poppins-Medium.ttf) format("truetype");
+}
+html {
+    scroll-behavior: smooth;
+}
+header, footer{
+	background: var(--bg-dark-gradient);
+}
+/*Mobile*/
+.wrap{
+	width:90%;
+	margin: 0 auto;
+}
+
+/*Desktop*/
+@media(min-width:1330px){
+	.wrap{
+		width:100%;
+		max-width:80rem;/*1280px*/
+        margin: 0 auto;
+	}
+}
