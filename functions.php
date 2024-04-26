@@ -23,7 +23,7 @@ require get_template_directory() . '/classes/class-now-script-loader.php';
 	}
 	add_action( 'wp_enqueue_scripts', 'now_register_scripts' );
 
-		function now_theme_support() {
+	function now_theme_support() {
 
 				// Add default posts and comments RSS feed links to head.
 				add_theme_support( 'automatic-feed-links' );
@@ -136,16 +136,13 @@ require get_template_directory() . '/classes/class-now-script-loader.php';
 				 
 				$loader = new now_Script_Loader();
 				add_filter( 'script_loader_tag', array( $loader, 'filter_script_loader_tag' ), 10, 2 );
+		}
+		add_action( 'after_setup_theme', 'now_theme_support' );
 
-			}
-
-			add_action( 'after_setup_theme', 'now_theme_support' );
-
-			function my_theme_textdomain(){
-			    load_theme_textdomain( 'now', get_template_directory() . '/languages' );
-			}
-			add_action( 'after_setup_theme', 'my_theme_textdomain' );
-
+		function my_theme_textdomain(){
+		    load_theme_textdomain( 'now', get_template_directory() . '/languages' );
+		}
+		add_action( 'after_setup_theme', 'my_theme_textdomain' );
 
 // Now ACF -> Gutemberg
 	add_action('acf/init', 'my_acf_blocks_init');
@@ -166,55 +163,60 @@ require get_template_directory() . '/classes/class-now-script-loader.php';
 	}
 
 // Now Logo
-function now_logo($html) {
-    $html = str_replace('custom-logo-link', 'w-full self-center', $html);
-    $html = preg_replace('/(<img(.*?)class="([^"]*)")/', '$1 title="Everything Now" width="300" height="73" class="$3 w-24" style="aspect-ratio:300 / 73;"', $html);
-    return $html;
-}
-add_filter('get_custom_logo', 'now_logo');
+	function now_logo($html) {
+	    $html = str_replace('custom-logo-link', 'w-full self-center', $html);
+	    $html = preg_replace('/(<img(.*?)class="([^"]*)")/', '$1 title="Everything Now" width="300" height="73" class="$3 w-24" style="aspect-ratio:300 / 73;"', $html);
+	    return $html;
+	}
+	add_filter('get_custom_logo', 'now_logo');
 
 // Now Menu
-function now_menu() {
-	$locations = array(
-		'megamenu' => __('Mega Menu', 'now'),
-		'mobile'   => __( 'Mobile Menu', 'now' ),
-		'footer'   => __( 'Footer Menu', 'now' ),
-		'social'   => __( 'Social Menu', 'now' ),
-	);
-	register_nav_menus( $locations );
-}
-add_action( 'init', 'now_menu' );
-
+	function now_menu() {
+		$locations = array(
+			'megamenu' => __('Mega Menu', 'now'),
+			'mobile'   => __( 'Mobile Menu', 'now' ),
+			'footer'   => __( 'Footer Menu', 'now' ),
+			'social'   => __( 'Social Menu', 'now' ),
+		);
+		register_nav_menus( $locations );
+	}
+	add_action( 'init', 'now_menu' );
 
 // Now SVG
-function allow_svg_upload( $mimes ) {
-    $mimes['svg'] = 'image/svg+xml';
-    return $mimes;
-}
-add_filter( 'upload_mimes', 'allow_svg_upload' );
-
+	function allow_svg_upload( $mimes ) {
+	    $mimes['svg'] = 'image/svg+xml';
+	    return $mimes;
+	}
+	add_filter( 'upload_mimes', 'allow_svg_upload' );
 
 // Now clean SVG
-function sanitize_svg($svg) {
-    $svg = str_replace(['<![CDATA[', ']]>'], '', $svg);
-    return $svg;
-}
-add_filter('wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
-    $filetype = wp_check_filetype( $filename, $mimes );
-    return [
-        'ext'             => $filetype['ext'],
-        'type'            => $filetype['type'],
-        'proper_filename' => $data['proper_filename']
-    ];
-}, 10, 4);
-add_filter('wp_handle_upload_prefilter', function($file) {
-    if($file['type'] === 'image/svg+xml') {
-        $svg = file_get_contents($file['tmp_name']);
-        $svg = sanitize_svg($svg);
-        file_put_contents($file['tmp_name'], $svg);
-    }
-    return $file;
-});
+	function sanitize_svg($svg) {
+	    $svg = str_replace(['<![CDATA[', ']]>'], '', $svg);
+	    return $svg;
+	}
+	add_filter('wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
+	    $filetype = wp_check_filetype( $filename, $mimes );
+	    return [
+	        'ext'             => $filetype['ext'],
+	        'type'            => $filetype['type'],
+	        'proper_filename' => $data['proper_filename']
+	    ];
+	}, 10, 4);
+	add_filter('wp_handle_upload_prefilter', function($file) {
+	    if($file['type'] === 'image/svg+xml') {
+	        $svg = file_get_contents($file['tmp_name']);
+	        $svg = sanitize_svg($svg);
+	        file_put_contents($file['tmp_name'], $svg);
+	    }
+	    return $file;
+	});
+
+// Now Webp
+	function add_webp_upload_mimes($existing_mimes) {
+	    $existing_mimes['webp'] = 'image/webp';
+	    return $existing_mimes;
+	}
+	add_filter('mime_types', 'add_webp_upload_mimes');
 
 // Now custom var_dump
 	function now_var_dump($data) {
