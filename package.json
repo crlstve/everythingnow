@@ -1,9 +1,9 @@
 {
-  "name": "now",
+  "name": "everythingnow",
   "version": "1.0.0",
-  "description": "now package",
   "main": "index.js",
   "scripts": {
+    "test": "npm run test",
     "dev": "npm run development",
     "prod": "npm run production",
     "development": "mix",
@@ -12,28 +12,16 @@
     "hot": "mix watch --hot",
     "production": "mix --production"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/crlstve/everythingnow.git"
-  },
-  "keywords": [
-    "everything",
-    "now"
-  ],
-  "author": "c.esteve",
+  "author": "cesteve",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/crlstve/everythingnow/issues"
-  },
-  "homepage": "https://github.com/crlstve/everythingnow#readme",
+  "description": "",
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "laravel-mix": "^6.0.49",
-    "tailwindcss": "^3.4.3"
+    "laravel-mix": "^6.0.49"
   },
   "dependencies": {
     "postcss": "^8.4.38",
     "postcss-nested": "^6.0.1",
-    "typed.js": "^2.0.12"
+    "tailwindcss": "^3.4.3"
   }
 }
