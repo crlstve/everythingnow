@@ -1,11 +1,8 @@
 <?php
 /**
  * now Starter Content
- *
- * @link https://make.wordpress.org/core/2016/11/30/starter-content-for-themes-in-4-7/
- *
- * @package WordPress
- * @subpackage Sesame_HR
+ * @package now
+ * @subpackage now
  * @since now 1.0
  */
 
