@@ -6,13 +6,27 @@
 require get_template_directory() . '/classes/class-now-svg-icons.php';
 require get_template_directory() . '/classes/class-now-script-loader.php';
 
+// Now ACF -> option page 
+	if( function_exists('acf_add_options_page') ) {
+	   	acf_add_options_page();
+	   	acf_add_options_sub_page('General');
+	   	acf_add_options_sub_page('Header');
+	   	acf_add_options_sub_page('Footer');
+	   	acf_add_options_sub_page('Home');
+	   	acf_add_options_sub_page('Blog');
+	}
+
 // Now css
 	function now_register_styles() {
 		wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '1.0' ); // -> No css, just meta info
 		wp_enqueue_style('now-style', get_stylesheet_directory_uri() . '/assets/css/now-style.css', array(), '1.0');
 		// TTAILWIND //
-			// CDN -> wp_enqueue_script('tailwind','https://cdn.tailwindcss.com');
-			wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/assets/css/tailwind-min.css', array(), '3.3.2');
+			$tailwind_test = get_field('tailwind_test','options');
+			if($tailwind_test){
+				wp_enqueue_script('tailwind','https://cdn.tailwindcss.com'); // development
+			}else{
+				wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/assets/css/theme.css', array(), '3.3.2'); // production
+			}			
 	}
 	add_action( 'wp_enqueue_scripts', 'now_register_styles' );
 

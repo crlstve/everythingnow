@@ -19,6 +19,13 @@ module.exports = {
   darkMode: false, //you can set it to media(uses prefers-color-scheme) or class(better for toggling modes via a button)
   theme: {
     extend: {},
+    fontFamily: {
+      'sans': ['Poppins',...],
+      'serif': ['Poppins', ...],
+      'mono': ['Poppins', ...],
+      'display': ['Poppins',...],
+      'body': ['"Poppins"',...],
+    },
   },
   variants: {},
   plugins: [],
