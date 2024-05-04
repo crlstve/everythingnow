@@ -3,8 +3,14 @@
  * now functions and definitions
  **/
 
-require get_template_directory() . '/classes/class-now-svg-icons.php';
-require get_template_directory() . '/classes/class-now-script-loader.php';
+// Exit if accessed directly.
+	if ( ! defined( 'ABSPATH' ) ) {
+	    exit;
+	}
+
+// Now Requiered
+	require get_template_directory() . '/classes/class-now-svg-icons.php';
+	require get_template_directory() . '/classes/class-now-script-loader.php';
 
 // Now ACF -> option page 
 	if( function_exists('acf_add_options_page') ) {
@@ -171,7 +177,7 @@ require get_template_directory() . '/classes/class-now-script-loader.php';
 	            'name'              => 'testimonial',
 	            'title'             => __('Testimonial'),
 	            'description'       => __('A custom testimonial block.'),
-	            'render_template'   => '/blocks/test.php',
+	            'render_template'   => '/blocks/test/test.php',
 	            'category'          => 'formatting',
 	        ));
 	    }

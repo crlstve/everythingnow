@@ -2,10 +2,12 @@
 /**
  * Custom icons for this theme.
  *
- * @package WordPress
- * @subpackage Sesame_HR
- * @since now 1.0
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 if ( ! class_exists( 'now_SVG_Icons' ) ) {
 	/**

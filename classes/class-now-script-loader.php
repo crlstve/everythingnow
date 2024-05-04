@@ -4,12 +4,12 @@
  *
  * Allow `async` and `defer` while enqueuing Javascript.
  *
- * Based on a solution in WP Rig.
- *
- * @package WordPress
- * @subpackage Sesame_HR
- * @since now 1.0
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 if ( ! class_exists( 'now_Script_Loader' ) ) {
 	/**
