@@ -26,6 +26,7 @@ require get_template_directory() . '/classes/class-now-script-loader.php';
 				wp_enqueue_script('tailwind','https://cdn.tailwindcss.com'); // development
 			}else{
 				wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/assets/css/theme.css', array(), '3.3.2'); // production
+				wp_script_add_data( 'tailwind', 'defer', true );
 			}			
 	}
 	add_action( 'wp_enqueue_scripts', 'now_register_styles' );
