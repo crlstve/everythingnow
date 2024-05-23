@@ -246,3 +246,49 @@
 	        var_dump($data);
 	    }
 	}
+
+// Now create footer widgets
+function now_footer_widets() {
+    register_sidebar( array(
+        'name'          => 'Footer 1',
+        'id'            => 'footer_1',
+        'before_widget' => '<div class="footer-content">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+        'after_title'   => '</span>',
+    ) );
+    register_sidebar( array(
+        'name'          => 'Footer 2',
+        'id'            => 'footer_2',
+        'before_widget' => '<div class="footer-content">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+        'after_title'   => '</span>',
+    ) );
+    register_sidebar( array(
+        'name'          => 'Footer 3',
+        'id'            => 'footer_3',
+        'before_widget' => '<div class="footer-content">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+        'after_title'   => '</span>',
+    ) );
+    register_sidebar( array(
+        'name'          => 'Footer 4',
+        'id'            => 'footer_4',
+        'before_widget' => '<div class="footer-content">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+        'after_title'   => '</span>',
+    ) );
+        register_sidebar( array(
+        'name'          => 'Footer Social Media',
+        'id'            => 'footer_rrss',
+        'before_widget' => '<div class="footer-content">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+        'after_title'   => '</span>',
+    ) );    
+
+}
+    add_action( 'widgets_init', 'now_footer_widets' );
