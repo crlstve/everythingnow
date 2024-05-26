@@ -1,6 +1,6 @@
 <?php
 /**
- * now functions and definitions
+ * Now functions and definitions
  **/
 
 // Exit if accessed directly.
@@ -10,6 +10,7 @@
 
 // Now Requiered
 	require get_template_directory() . '/classes/class-now-svg-icons.php';
+	require get_template_directory() . '/inc/svg-icons.php';
 	require get_template_directory() . '/classes/class-now-script-loader.php';
 
 // Now ACF -> option page 
@@ -210,34 +211,10 @@
 	}
 	add_filter( 'upload_mimes', 'allow_svg_upload' );
 
-// Now clean SVG
-	function sanitize_svg($svg) {
-	    $svg = str_replace(['<![CDATA[', ']]>'], '', $svg);
-	    return $svg;
-	}
-	add_filter('wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
-	    $filetype = wp_check_filetype( $filename, $mimes );
-	    return [
-	        'ext'             => $filetype['ext'],
-	        'type'            => $filetype['type'],
-	        'proper_filename' => $data['proper_filename']
-	    ];
-	}, 10, 4);
-	add_filter('wp_handle_upload_prefilter', function($file) {
-	    if($file['type'] === 'image/svg+xml') {
-	        $svg = file_get_contents($file['tmp_name']);
-	        $svg = sanitize_svg($svg);
-	        file_put_contents($file['tmp_name'], $svg);
-	    }
-	    return $file;
-	});
 
-// Now Webp
-	function add_webp_upload_mimes($existing_mimes) {
-	    $existing_mimes['webp'] = 'image/webp';
-	    return $existing_mimes;
-	}
-	add_filter('mime_types', 'add_webp_upload_mimes');
+
+
+
 
 // Now custom var_dump
 	function now_var_dump($data) {
@@ -248,47 +225,47 @@
 	}
 
 // Now create footer widgets
-function now_footer_widets() {
-    register_sidebar( array(
-        'name'          => 'Footer 1',
-        'id'            => 'footer_1',
-        'before_widget' => '<div class="footer-content">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
-        'after_title'   => '</span>',
-    ) );
-    register_sidebar( array(
-        'name'          => 'Footer 2',
-        'id'            => 'footer_2',
-        'before_widget' => '<div class="footer-content">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
-        'after_title'   => '</span>',
-    ) );
-    register_sidebar( array(
-        'name'          => 'Footer 3',
-        'id'            => 'footer_3',
-        'before_widget' => '<div class="footer-content">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
-        'after_title'   => '</span>',
-    ) );
-    register_sidebar( array(
-        'name'          => 'Footer 4',
-        'id'            => 'footer_4',
-        'before_widget' => '<div class="footer-content">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
-        'after_title'   => '</span>',
-    ) );
-        register_sidebar( array(
-        'name'          => 'Footer Social Media',
-        'id'            => 'footer_rrss',
-        'before_widget' => '<div class="footer-content">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
-        'after_title'   => '</span>',
-    ) );    
+	function now_footer_widets() {
+	    register_sidebar( array(
+	        'name'          => 'Footer 1',
+	        'id'            => 'footer_1',
+	        'before_widget' => '<div class="footer-content">',
+	        'after_widget'  => '</div>',
+	        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+	        'after_title'   => '</span>',
+	    ) );
+	    register_sidebar( array(
+	        'name'          => 'Footer 2',
+	        'id'            => 'footer_2',
+	        'before_widget' => '<div class="footer-content">',
+	        'after_widget'  => '</div>',
+	        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+	        'after_title'   => '</span>',
+	    ) );
+	    register_sidebar( array(
+	        'name'          => 'Footer 3',
+	        'id'            => 'footer_3',
+	        'before_widget' => '<div class="footer-content">',
+	        'after_widget'  => '</div>',
+	        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+	        'after_title'   => '</span>',
+	    ) );
+	    register_sidebar( array(
+	        'name'          => 'Footer 4',
+	        'id'            => 'footer_4',
+	        'before_widget' => '<div class="footer-content">',
+	        'after_widget'  => '</div>',
+	        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+	        'after_title'   => '</span>',
+	    ) );
+	        register_sidebar( array(
+	        'name'          => 'Footer Social Media',
+	        'id'            => 'footer_rrss',
+	        'before_widget' => '<div class="footer-content">',
+	        'after_widget'  => '</div>',
+	        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+	        'after_title'   => '</span>',
+	    ) );    
 
-}
-    add_action( 'widgets_init', 'now_footer_widets' );
+	}
+	    add_action( 'widgets_init', 'now_footer_widets' );
