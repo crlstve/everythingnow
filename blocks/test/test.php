@@ -14,10 +14,10 @@
             $vid = $text_img['vid_1'];
 ?>
     <section class="wrap flex flex-col <?= ($side=='left' ? 'lg:flex-row' : 'lg:flex-row-reverse'); ?> gap-6 justify-between">
-        <div class="w-full lg:w-1/2">
+        <article class="w-full lg:w-1/2">
             <?php if($title): ?><h1 class="font-bold text-3xl mb-8"><?= esc_html($title); ?></h1><?php endif; ?>
             <?php if($text): ?><p class="text-base"><?= esc_html($text); ?></p><?php endif; ?>
-        </div>
+        </article>
         <?php if($img || $vid):?>
         	<div class="w-full lg:w-1/2">
                 <?php if($img): ?>

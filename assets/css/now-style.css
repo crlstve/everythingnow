@@ -1,10 +1,10 @@
 :root {
-    --bg-primary-color: white;
-    --bg-dark-gradient: linear-gradient(180deg, rgba(45,45,45,1) 0%, rgba(29,29,27,1) 100%);
-    --bg-secundary-color: ;
-    --btn-primary-color: #6C63FF;
-    --btn-hover-color: #5C56DB;
-    --font-primary-color: #1F2D52;
+    --bg-primary-color: #222831;
+    --bg-secundary-color: #393E46;
+    --bg-dark-gradient: linear-gradient(180deg, #222831 0%, #393E46 100%);
+    --btn-primary-color: #D65A31;
+    --btn-hover-color: #e06339;
+    --font-primary-color: #EEEEEE;
 }
 @font-face {
     font-family: 'Poppins';
@@ -16,9 +16,10 @@
 html {
     scroll-behavior: smooth;
     font-family: 'Poppins';
+    background-color: var(--bg-secundary-color);
 }
 header, footer{
-	background: var(--bg-dark-gradient);
+	background: var(--bg-primary-color);
 }
 /*Mobile*/
 .wrap{

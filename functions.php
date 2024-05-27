@@ -7,7 +7,7 @@
 	if ( ! defined( 'ABSPATH' ) ) {
 	    exit;
 	}
- 
+
 // Now Requiered
 	require get_template_directory() . '/classes/class-now-svg-icons.php';
 	require get_template_directory() . '/inc/svg-icons.php';
