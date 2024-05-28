@@ -11,7 +11,7 @@
 	<meta name="googlebot" content="index,follow"/>
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black scroll-smooth'); ?>>
 <?php wp_body_open(); ?>
 <header class="sticky top-0 shadow-md">
 	<div class="wrap z-50 py-3 flex flex-row justify-between">
