@@ -5,7 +5,7 @@
 @import "tailwindcss/utilities";
 
 @layer base {
-  @font-face {
+  html {
     font-family: 'Poppins';
     font-weight: 500;
     font-style: normal;
