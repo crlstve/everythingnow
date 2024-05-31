@@ -38,10 +38,19 @@
 	}
 	add_action( 'wp_enqueue_scripts', 'now_register_styles' );
 
+		// Now css for editor
+			// Add backend styles for Gutenberg.
+				function now_editor_assets() {
+				// Load the theme styles within Gutenberg.
+				wp_enqueue_style('now-editor-styles',get_stylesheet_directory_uri() . '/assets/css/theme.css',FALSE);
+				}
+				add_action('enqueue_block_editor_assets', 'now_editor_assets');
+
+
 // Now js
 	function now_register_scripts() {
-		/*wp_enqueue_script( 'now-js', get_template_directory_uri() . '/assets/js/index.js', array(), '1.0', false );
-		wp_script_add_data( 'now-js', 'async', true );*/
+		wp_enqueue_script( 'now-header', get_template_directory_uri() . '/assets/js/header-effect.js', array(), '1.0', false );
+		wp_script_add_data( 'now-header', 'defer', true );
 	}
 	add_action( 'wp_enqueue_scripts', 'now_register_scripts' );
 
@@ -187,7 +196,7 @@
 // Now Logo
 	function now_logo($html) {
 	    $html = str_replace('custom-logo-link', 'w-full self-center', $html);
-	    $html = preg_replace('/(<img(.*?)class="([^"]*)")/', '$1 title="Everything Now" width="300" height="73" class="$3 w-24" style="aspect-ratio:300 / 73;"', $html);
+	    $html = preg_replace('/(<img(.*?)class="([^"]*)")/', '$1 title="Everything Now" width="300" height="73" class="$3 w-24"', $html);
 	    return $html;
 	}
 	add_filter('get_custom_logo', 'now_logo');

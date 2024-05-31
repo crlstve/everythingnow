@@ -19,7 +19,7 @@ html {
     background-color: var(--bg-secundary-color);
 }
 header, footer{
-	background: var(--bg-primary-color);
+	background: transparent;
 }
 /*Mobile*/
 .wrap{
