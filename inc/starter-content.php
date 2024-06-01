@@ -211,5 +211,4 @@ function now_get_starter_content() {
 	 * @param array $starter_content Array of starter content.
 	 */
 	return apply_filters( 'now_starter_content', $starter_content );
-
 }

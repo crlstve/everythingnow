@@ -220,11 +220,6 @@
 	}
 	add_filter( 'upload_mimes', 'allow_svg_upload' );
 
-
-
-
-
-
 // Now custom var_dump
 	function now_var_dump($data) {
 	    // Verifica si el usuario actual es un administrador
