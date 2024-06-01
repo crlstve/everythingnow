@@ -187,7 +187,7 @@
 	            'name'              => 'testimonial',
 	            'title'             => __('Testimonial'),
 	            'description'       => __('A custom testimonial block.'),
-	            'render_template'   => '/blocks/test/test.php',
+	            'render_template'   => '/blocks/testimonial/testimonial.php',
 	            'category'          => 'formatting',
 	        ));
 	    }

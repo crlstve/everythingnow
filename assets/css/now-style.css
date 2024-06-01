@@ -26,6 +26,25 @@ header, footer{
 	width:95%;
 	margin: 0 auto;
 }
+/*Scrollbar*/
+    /* width */
+    ::-webkit-scrollbar {
+        width: 0.8rem;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px black;
+        border-radius: 1.2rem;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(#374151 0%, #111827 100%);
+        border-radius: 1.2rem;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        border: white 1px solid;
+    }
 
 /*Desktop*/
 @media(min-width:1330px){

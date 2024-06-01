@@ -13,6 +13,7 @@ module.exports = {
       './blocks/*.php',
       './classes/**/*.php',
       './classes/*.php',
+      './assets/js/*.js',
     ],
   theme: {
     extend: {},
