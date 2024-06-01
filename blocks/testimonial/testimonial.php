@@ -17,7 +17,7 @@ $vid = $text_img['vid_1'];
 ?>
 <section class="<?= $file_name; ?> wrap flex <?= ($side == 'left' ? 'flex-col-reverse md:flex-row' : 'flex-col-reverse md:flex-row-reverse'); ?> justify-between gap-3 lg:gap-12">
     <article class="w-full md:w-3/5 lg:w-3/4">
-        <?php if ($title) : ?><<?= $label; ?> class="font-bold text-2xl md:text-3xl mb-4 md:mb-5 bg-clip-text text-transparent bg-gradient-to-b from-yellow-200 via-yellow-400 to-yellow-700"><?= esc_html($title); ?></<?= $label; ?>><?php endif; ?>
+        <?php if ($title) : ?><<?= $label; ?> class="font-bold text-2xl md:text-3xl mb-2 bg-clip-text text-transparent bg-gradient-to-b from-yellow-200 via-yellow-400 to-yellow-700"><?= esc_html($title); ?></<?= $label; ?>><?php endif; ?>
         <?php if ($text) : ?><p class="text-base text-white"><?= esc_html($text); ?></p><?php endif; ?>
     </article>
     <?php if ($img || $vid) : ?>
