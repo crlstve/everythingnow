@@ -1,0 +1,45 @@
+{
+    "key": "group_66318ca9cd352",
+    "title": "Tailwind Dev \/ Prod",
+    "fields": [
+        {
+            "key": "field_66318ca9671f7",
+            "label": "Tailwind",
+            "name": "tailwind_test",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "*Activa el modo dev para Tailwind y llama a su CDN",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "DEV",
+            "ui_off_text": "PROD",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-general"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1717883561
+}

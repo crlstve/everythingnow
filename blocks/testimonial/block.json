@@ -23,7 +23,7 @@
   "attributes": {
     "align": {
       "type": "string",
-      "default": "wrap"
+      "default": "full"
     }
   }
 }
