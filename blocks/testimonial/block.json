@@ -1,0 +1,29 @@
+{
+  "name": "acf/testimonial",
+  "title": "testimonial",
+  "description": "",
+  "style": [
+    "file:./style.css"
+  ],
+  "category": "now",
+  "icon": "",
+  "keywords": [
+    "testimonial"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "testimonial.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": [
+      "wrap"
+    ]
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wrap"
+    }
+  }
+}

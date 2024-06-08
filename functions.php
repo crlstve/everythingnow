@@ -4,9 +4,7 @@
  **/
 
 // Exit if accessed directly.
-	if ( ! defined( 'ABSPATH' ) ) {
-	    exit;
-	}
+	if ( ! defined( 'ABSPATH' ) ) { exit;}
 
 // Now Requiered
 	require get_template_directory() . '/classes/class-now-svg-icons.php';
@@ -175,7 +173,17 @@
 		}
 		add_action( 'after_setup_theme', 'my_theme_textdomain' );
 
-// Now ACF -> Gutemberg
+// Now Blocks
+	add_action('init', function () {
+		$blocks = [
+			'testimonial'
+		];
+		sort($blocks);
+		foreach ($blocks as $block) {
+			register_block_type( __DIR__ . '/blocks/' . $block);
+		}
+	});
+/* Now ACF -> Gutemberg
 	add_action('acf/init', 'my_acf_blocks_init');
 	function my_acf_blocks_init() {
 
@@ -191,7 +199,7 @@
 	            'category'          => 'formatting',
 	        ));
 	    }
-	}
+	} */
 
 // Now Logo
 	function now_logo($html) {
