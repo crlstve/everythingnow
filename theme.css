@@ -5,11 +5,13 @@
 @import "tailwindcss/utilities";
 
 @layer base {
-  html {
-    font-family: 'Poppins';
+  @font-face {
+    font-family: 'Montserrat';
     font-weight: 500;
     font-style: normal;
     font-display: swap;
-    src: url(/assets/fonts/Poppins-Medium.ttf) format("truetype");
+    src: url(../fonts/Montserrat-Regular.ttf) format("truetype"),
+    url(../fonts/Poppins-Medium.ttf) format("truetype"),
+    ;
   }
 }

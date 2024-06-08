@@ -17,9 +17,9 @@ module.exports = {
     ],
   theme: {
     extend: {},
-    fontFamily: {
-      'sans': ['"Poppins"'],
-    },
+      fontFamily: {
+        'sans': ['"Montserrat"'],
+      },      
   },
   variants: {},
   plugins: [],

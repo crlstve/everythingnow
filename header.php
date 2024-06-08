@@ -3,12 +3,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<meta name="description" content=""/>
-	<meta name="og:title" content=""/>
-	<meta name="og:description" content=""/>
-	<meta name="robots" content="index,follow"/>
-	<meta name="googlebot" content="index,follow"/>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class('bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black scroll-smooth'); ?>>
