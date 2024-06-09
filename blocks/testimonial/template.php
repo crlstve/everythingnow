@@ -14,9 +14,9 @@ $bullets = $testimonial['bullets'];
         <?php if ($title) : ?>
             <header><<?= $label; ?> class="font-semibold text-2xl md:text-3xl mb-2 bg-clip-text text-transparent bg-gradient-to-b from-[#afafaf] via-[white] to-[#374151]"><?= esc_html($title); ?></<?= $label; ?>></header>
         <?php endif; ?>
-        <div class="md:ml-2 md:border-l md:pl-4">
-            <?php if ($text) : ?><p class="text-base text-white "><?= $text; ?></p><?php endif; ?>
-        </div>
+        <?php if ($text) : ?>
+            <div class="md:ml-2 md:border-l md:pl-4"><p class="text-base text-white "><?= $text; ?></p></div>
+        <?php endif; ?>
         <?php if($bullets): ?>
             <ul class="mt-4 flex flex-col gap-3">
                 <?php foreach ($bullets as $bullet): ?>
