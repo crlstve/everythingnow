@@ -18,7 +18,7 @@ $cta = $testimonial['cta'];
         <?php if ($text) : ?>
             <div class="md:ml-2 md:border-l md:pl-4"><p class="text-base text-white "><?= $text; ?></p></div>
         <?php endif; ?>
-        <?php if($bullets ||$cta['cta_link'] ): ?>
+        <?php if($bullets || $cta['cta_link'] ): ?>
             <div class="flex flex-col lg:flex-row">
                 <?php if($bullets): ?>
                     <ul class="mt-4 flex flex-col gap-3 <?php if($cta['cta_link']): ?>lg:w-2/3<?php endif; ?>">

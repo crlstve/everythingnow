@@ -30,7 +30,7 @@
 			if($tailwind_test){
 				wp_enqueue_script('tailwind','https://cdn.tailwindcss.com'); // development
 			}else{
-				wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/assets/css/theme.css', array(), '3.3.2'); // production
+				wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/assets/css/theme.css', array(), '3.4.3'); // production
 				wp_script_add_data( 'tailwind', 'defer', true );
 			}			
 	}
