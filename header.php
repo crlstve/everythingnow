@@ -9,7 +9,7 @@
 <?php wp_body_open(); ?>
 <header id="now-header" class="sticky top-0">
 	<div class="wrap z-50 py-3 flex flex-row justify-between">
-		<div id="now-logo" class="w-24 h-8 flex flex-row">
+		<div id="now-logo" class="w-20 h-8 flex flex-row">
 			<?= (has_custom_logo()) ? the_custom_logo() : ''; ?>
 		</div>
 		<div id="mega-menu" class="self-center text-white">
