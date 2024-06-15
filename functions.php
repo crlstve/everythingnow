@@ -2,7 +2,6 @@
 /**
  * Now functions and definitions
  **/
-
 // Exit if accessed directly.
 	if ( ! defined( 'ABSPATH' ) ) { exit;}
 
@@ -51,6 +50,12 @@
 		wp_script_add_data( 'now-header', 'defer', true );
 	}
 	add_action( 'wp_enqueue_scripts', 'now_register_scripts' );
+
+	function add_splidejs(){
+		wp_enqueue_script( 'splidejs', get_template_directory_uri() . '/assets/js/splide.js',array(), '4.1.3');
+		wp_enqueue_style('splidecss', get_template_directory_uri() . '/assets/css/splide.css', array(), '4.1.3');
+		add_action( 'wp_enqueue_scripts', 'add_splidejs' );
+	}
 
 	function now_theme_support() {
 
@@ -176,15 +181,24 @@
 // Now Blocks
 	add_action('init', function () {
 		$blocks = [
-			'testimonial'
+			'testimonial',
+			'slider',
 		];
-		sort($blocks);
 		foreach ($blocks as $block) {
 			register_block_type( __DIR__ . '/blocks/' . $block);
 		}
 	});
-
-/* Now ACF -> Deorecated
+	add_action('wp_enqueue_scripts', function () {
+		if (has_block('acf/testimonial')) {
+			wp_enqueue_style('testimonial-style', get_template_directory_uri() . '/blocks/testimonial/style.css');
+			wp_enqueue_script('testimonial-script', get_template_directory_uri() . '/blocks/testimonial/script.js', [], false, true);
+		}
+		if (has_block('acf/slider')) {
+			wp_enqueue_style('slider-style', get_template_directory_uri() . '/blocks/slider/style.css');
+			wp_enqueue_script('slider-script', get_template_directory_uri() . '/blocks/slider/script.js', [], false, true);
+		}
+	});
+	/* Now ACF -> Deprecated
 	add_action('acf/init', 'my_acf_blocks_init');
 	function my_acf_blocks_init() {
 
@@ -242,41 +256,41 @@
 	    register_sidebar( array(
 	        'name'          => 'Footer 1',
 	        'id'            => 'footer_1',
-	        'before_widget' => '<div class="footer-content">',
+	        'before_widget' => '<div class="footer-content dark:text-white">',
 	        'after_widget'  => '</div>',
-	        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+	        'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
 	        'after_title'   => '</span>',
 	    ) );
 	    register_sidebar( array(
 	        'name'          => 'Footer 2',
 	        'id'            => 'footer_2',
-	        'before_widget' => '<div class="footer-content">',
+	        'before_widget' => '<div class="footer-content dark:text-white">',
 	        'after_widget'  => '</div>',
-	        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+	        'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
 	        'after_title'   => '</span>',
 	    ) );
 	    register_sidebar( array(
 	        'name'          => 'Footer 3',
 	        'id'            => 'footer_3',
-	        'before_widget' => '<div class="footer-content">',
+	        'before_widget' => '<div class="footer-content dark:text-white">',
 	        'after_widget'  => '</div>',
-	        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+	        'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
 	        'after_title'   => '</span>',
 	    ) );
 	    register_sidebar( array(
 	        'name'          => 'Footer 4',
 	        'id'            => 'footer_4',
-	        'before_widget' => '<div class="footer-content">',
+	        'before_widget' => '<div class="footer-content dark:text-white">',
 	        'after_widget'  => '</div>',
-	        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+	        'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
 	        'after_title'   => '</span>',
 	    ) );
 	        register_sidebar( array(
 	        'name'          => 'Footer Social Media',
 	        'id'            => 'footer_rrss',
-	        'before_widget' => '<div class="footer-content">',
+	        'before_widget' => '<div class="footer-content dark:text-white">',
 	        'after_widget'  => '</div>',
-	        'before_title'  => '<span data-class="footer-title" class="font-bold text-white">',
+	        'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
 	        'after_title'   => '</span>',
 	    ) );    
 
