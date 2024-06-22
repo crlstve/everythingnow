@@ -1,5 +1,5 @@
 <?php 
-/* Template Name: Test */ 
+/* Template Name: NOW */ 
 
     get_header(); 
 

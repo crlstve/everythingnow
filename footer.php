@@ -9,8 +9,7 @@
                 ?>
             </div>
             <div class="wrap">
-                <p class="dark:text-white text-xs"><?= esc_html('© ' . date("Y") . ' ' . get_bloginfo('name')); ?></p>
-                <button onclick="dakMode()">Toggle dark mode</button>
+                <p class="dark:text-white text-xs"><?= esc_html(date("Y") . ' ' . get_bloginfo('name')); ?></p>
                 <script>
                     function dakMode() {
                         var element = document.body;
