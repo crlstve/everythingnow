@@ -1,10 +1,14 @@
-:root {
-    --bg-primary-color: #111827;
-    --bg-secundary-color: #374151;
-    --bg-dark-gradient: linear-gradient(180deg, #111827 0%, #374151 100%);
-    --btn-primary-color: #D65A31;
-    --btn-hover-color: #e06339;
-    --font-primary-color: #EEEEEE;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-prime: #111827;
+        --bg-sec: #374151;
+        --bg-dark-grad: linear-gradient(180deg, #111827 0%, #374151 100%);
+        --btn-prime: #D65A31;
+        --btn-hover: #e06339;
+        --text-prime: #eee;
+        --text-sec: #fff;
+        --link: #caff69;
+    }
 }
 /*Header-Footer*/
     header, footer{

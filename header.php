@@ -12,7 +12,6 @@
 		<div id="now-logo" class="w-20 h-8 flex flex-row">
 			<?= (has_custom_logo()) ? the_custom_logo() : ''; ?>
 		</div>
-		                <button class="bg-white text-black" onclick="dakMode()">Toggle dark mode</button>
 		<div id="mega-menu" class="self-center dark:text-white">
 			<?php wp_nav_menu(); ?>
 		</div>
