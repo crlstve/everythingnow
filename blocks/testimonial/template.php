@@ -16,20 +16,24 @@ $cta = $testimonial['cta'];
             <header><<?= $label; ?> class="font-semibold text-2xl md:text-3xl mb-2 bg-clip-text text-transparent bg-gradient-to-b from-[#afafaf] via-[white] to-[#374151]"><?= esc_html($title); ?></<?= $label; ?>></header>
         <?php endif; ?>
         <?php if ($text) : ?>
-            <div class="md:ml-2 md:border-l md:pl-4"><p class="text-base text-white "><?= $text; ?></p></div>
+            <div class="md:ml-2 md:border-l md:pl-4"><p class="text-base dark:text-white "><?= $text; ?></p></div>
         <?php endif; ?>
         <?php if($bullets || $cta['cta_link'] ): ?>
             <div class="flex flex-col lg:flex-row">
                 <?php if($bullets): ?>
                     <ul class="mt-4 flex flex-col gap-3 <?php if($cta['cta_link']): ?>lg:w-2/3<?php endif; ?>">
                         <?php foreach ($bullets as $bullet): ?>
+<<<<<<< HEAD
                             <li class="flex flex-row gap-3" ><?= wp_get_attachment_image($bullet['bullet_icon'], 'thumb', true,['class' => 'w-12 h-12 transition ease-in-out hover:scale-110 duration-400 self-center']); ?><p class="dark:text-white self-center"><?= $bullet['bullet_text']; ?></p></li>
+=======
+                            <li class="flex flex-row gap-3" ><?= wp_get_attachment_image($bullet['bullet_icon'], 'thumb', true, array('class' => 'w-12 h-12 transition ease-in-out hover:scale-110 duration-400 self-center')); ?><p class="dark:text-white self-center"><?= $bullet['bullet_text']; ?></p></li>
+>>>>>>> fc4a3998cf3ec3e021ac9b030fb6ed8b47293fcf
                         <?php endforeach; ?>
                     </ul>
                 <?php  endif;  ?>
                 <?php if($cta['cta_link']): ?>
                     <div class="mt-4 flex lg:justify-center self-start lg:self-center">
-                        <a href="<?= $cta['cta_link']; ?>"><button class="bg-white rounded-full font-bold px-12 py-3"><?= $cta['cta_text']; ?></button></a>
+                        <a href="<?= $cta['cta_link']; ?>"><button class="dark:text-black dark:bg-white rounded-full font-bold px-12 py-3"><?= $cta['cta_text']; ?></button></a>
                     </div>
                 <?php endif; ?>
             </div>
