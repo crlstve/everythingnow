@@ -23,7 +23,7 @@ $cta = $testimonial['cta'];
                 <?php if($bullets): ?>
                     <ul class="mt-4 flex flex-col gap-3 <?php if($cta['cta_link']): ?>lg:w-2/3<?php endif; ?>">
                         <?php foreach ($bullets as $bullet): ?>
-                            <li class="flex flex-row gap-3" ><?= wp_get_attachment_image($bullet['bullet_icon'], 'thumb', true, array('class' => 'w-12 h-12 transition ease-in-out hover:scale-110 duration-400 self-center')); ?><p class="text-white self-center"><?= $bullet['bullet_text']; ?></p></li>
+                            <li class="flex flex-row gap-3" ><?= wp_get_attachment_image($bullet['bullet_icon'], 'thumb', true,['class' => 'w-12 h-12 transition ease-in-out hover:scale-110 duration-400 self-center']); ?><p class="dark:text-white self-center"><?= $bullet['bullet_text']; ?></p></li>
                         <?php endforeach; ?>
                     </ul>
                 <?php  endif;  ?>
