@@ -29,7 +29,7 @@ $cta = $testimonial['cta'];
                 <?php  endif;  ?>
                 <?php if($cta['cta_link']): ?>
                     <div class="mt-4 flex lg:justify-center self-start lg:self-center">
-                        <a href="<?= $cta['cta_link']; ?>"><button class="dark:text-black dark:bg-white rounded-full font-bold px-12 py-3"><?= $cta['cta_text']; ?></button></a>
+                        <a href="<?= $cta['cta_link']; ?>"><button class="text-black dark:text-white text-base font-semibold relative border-l border-t dark:border-white rounded-md flex justify-center self-center px-6 py-3 backdrop-blur shadow-md hover:text-black hover:bg-white duration-500"><?= $cta['cta_text']; ?></button></a>
                     </div>
                 <?php endif; ?>
             </div>

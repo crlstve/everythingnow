@@ -48,6 +48,7 @@
 	function now_register_scripts() {
 		wp_enqueue_script( 'now-header', get_template_directory_uri() . '/assets/js/header-effect.js', array(), '1.0', false );
 		wp_script_add_data( 'now-header', 'defer', true );
+		wp_enqueue_script( 'dark-mode', get_template_directory_uri() . '/assets/js/dark-mode.js', array(), '1.0', false );
 	}
 	add_action( 'wp_enqueue_scripts', 'now_register_scripts' );
 

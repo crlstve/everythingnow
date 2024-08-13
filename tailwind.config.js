@@ -15,6 +15,7 @@ module.exports = {
       './classes/*.php',
       './assets/js/*.js',
     ],
+  darkMode: 'selector',
   theme: {
     extend: {},
       fontFamily: {
