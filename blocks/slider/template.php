@@ -11,12 +11,12 @@ $slides = $slider['slide'];
                 <?php foreach ($slides as $slide): ?>
                 <li class="splide__slide list-none m-0 flex">
                     <div class="lg:flex lg:flex-wrap align-center shadow rounded-2xl relative">
-                        <article class="w-full content-slide text-left p-4 lg:p-8 rounded-2xl absolute">
+                        <div class="w-full content-slide text-left p-4 lg:p-8 rounded-2xl absolute">
                                 <<?= $slide['label']; ?> class="text-lg font-bold m-0 dark:text-white text-center"><?= $slide['title'] ?></<?= $slide['label']; ?>>
                                 <p class="text-base m-0 text-white">
                                 <?=$slide['content']?>
                                 </p>
-                        </article>
+                        </div>
                         <?= wp_get_attachment_image($slide['slide_img'], 'full', false, ['class' => 'w-full h-full object-cover self-center rounded-2xl']); ?>
                     </div>
                 </li>
