@@ -1,14 +1,14 @@
 <?php
 $file_name = basename(__DIR__);
 $testimonial = get_field('testimonial');
-$side = $testimonial['side'];
-$label = $testimonial['label'];
-$title = $testimonial['title'];
-$text = $testimonial['text'];
-$img = $testimonial['img'];
-$vid = $testimonial['vid'];
-$bullets = $testimonial['bullets'];
-$cta = $testimonial['cta'];
+$side = isset($testimonial['side']) ? $testimonial['side'] : '';
+$label = isset($testimonial['label']) ? $testimonial['label'] : '';
+$title = isset($testimonial['title']) ? $testimonial['title'] : '';
+$text = isset($testimonial['text']) ? $testimonial['text'] : '';
+$img = isset($testimonial['img']) ? $testimonial['img'] : '';
+$vid = isset($testimonial['vid']) ? $testimonial['vid'] : '';
+$bullets = isset($testimonial['bullets']) ? $testimonial['bullets'] : '';
+$cta = isset($testimonial['cta']) ? $testimonial['cta'] : '';
 ?>
 <section class="block-<?= $file_name; ?> wrap flex <?= ($side == 'left' ? 'flex-col-reverse md:flex-row' : 'flex-col-reverse md:flex-row-reverse'); ?> justify-between gap-3 lg:gap-12">
     <article class="w-full md:w-3/5 lg:w-3/4 self-center">
@@ -18,7 +18,7 @@ $cta = $testimonial['cta'];
         <?php if ($text) : ?>
             <div class="md:ml-2 md:border-l md:pl-4"><p class="text-base dark:text-white "><?= $text; ?></p></div>
         <?php endif; ?>
-        <?php if($bullets || $cta['cta_link'] ): ?>
+        <?php if(isset($bullets) || isset($cta['cta_link'] )): ?>
             <div class="flex flex-col lg:flex-row">
                 <?php if($bullets): ?>
                     <ul class="mt-4 flex flex-col gap-3 <?php if($cta['cta_link']): ?>lg:w-2/3<?php endif; ?>">
@@ -27,9 +27,9 @@ $cta = $testimonial['cta'];
                         <?php endforeach; ?>
                     </ul>
                 <?php  endif;  ?>
-                <?php if($cta['cta_link']): ?>
+                <?php if(isset($cta['cta_link'])): ?>
                     <div class="mt-4 flex lg:justify-center self-start lg:self-center">
-                        <a href="<?= $cta['cta_link']; ?>"><button class="text-black dark:text-white text-base font-semibold relative border-l border-t dark:border-white rounded-md flex justify-center self-center px-6 py-3 backdrop-blur shadow-md hover:text-black hover:bg-white duration-500"><?= $cta['cta_text']; ?></button></a>
+                        <a href="<?= $cta['cta_link']; ?>"><button class="btn_nav"><?= $cta['cta_text']; ?></button></a>
                     </div>
                 <?php endif; ?>
             </div>

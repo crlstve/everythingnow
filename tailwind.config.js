@@ -20,6 +20,7 @@ module.exports = {
     extend: {},
       fontFamily: {
         'sans': ['"Montserrat"'],
+        'serif': ['"Poppins"'],
       },      
   },
   variants: {},

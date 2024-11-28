@@ -5,17 +5,29 @@
 @import "tailwindcss/utilities";
 
 @layer base {
-  @font-face {
-    font-family: 'Montserrat';
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-    src: url(../fonts/Montserrat-Regular.ttf) format("truetype"),
-    url(../fonts/Poppins-Medium.ttf) format("truetype"),
-    ;
+
+:root {
+    --bg-primary: #fff;
+    --bg-secundary: #9f9f9f;
+    --bg-via: #e0e0e0;
+    --bg-primary-dark: #4d4845;
+    --bg-secundary-dark: #000000;
+    --bg-via-dark: #271411;
+    --btn-primary-color: #D65A31;
+    --btn-hover-color: #e06339;
+    --font-primary-color: #EEEEEE;
   }
 
+  @font-face { font-family: 'Montserrat'; font-weight: 500; font-style: normal; font-display: swap; src: url(../fonts/Montserrat-Regular.ttf) format("truetype"); }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Poppins'; font-weight: 600; font-style: normal; font-display: swap; src: url(../fonts/Poppins-SemiBold.ttf) format("truetype"); }
 
+  header, footer { @apply bg-transparent; }
+    
+  .btn_nav { @apply text-slate-600 text-center self-center font-semibold dark:text-white text-sm relative border-l border-t border-white hover:border-slate-300 hover:dark:border-slate-950 dark:border-slate-600 backdrop-blur hover:backdrop-blur-none shadow-md hover:shadow-inner rounded-full flex justify-center px-4 py-1 dark:hover:text-emerald-300 hover:text-violet-500; }
 
-  
+  .wrap { @apply container mx-auto px-8 w-11/12 xl:max-w-6xl 2xl:max-w-7xl; }
+
+  .crt::before { content: " "; display: block; position: fixed; height: 100%; top: 0; left: 0; bottom: 0; right: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); z-index: 2; background-size: 100% 2px, 3px 100%; pointer-events: none; }
+  a, p, span, time, h1, h2, h3, h4, h5, h6 { text-shadow: 0 0 8px var(--font-primary-color); }
 }
+
