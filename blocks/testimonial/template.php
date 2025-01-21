@@ -38,7 +38,7 @@ $cta = isset($testimonial['cta']) ? $testimonial['cta'] : '';
     <?php if ($img || $vid) : ?>
         <div class="w-1/2 sm:w-1/3 md:w-2/5 lg:w-1/4 realtive rounded-full overflow-hidden aspect-square border-8 border-transparent flex items-center justify-center self-center">
             <?php if ($img) : ?>
-                <?= wp_get_attachment_image($img, 'full', false, array('class' => 'object-cover w-full h-full transition ease-in-out hover:scale-110 duration-400')); ?>
+                <?= wp_get_attachment_image($img, 'full', false, ['class' => 'object-cover w-full h-full transition ease-in-out hover:scale-110 duration-400']); ?>
             <?php elseif ($vid) : ?>
                 <?= $vid ?>
             <?php endif; ?>
