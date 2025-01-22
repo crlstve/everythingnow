@@ -8,7 +8,7 @@
 <body <?php body_class('min-h-dvh bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[--bg-primary] via-[--bg-via] to-[--bg-secundary] dark:from-[--bg-primary-dark] dark:via-[--bg-via-dark] dark:to-[--bg-secundary-dark] crt'); ?>>
 <?php wp_body_open(); ?>
 <header id="now-header" class="sticky top-0 ">
-	<div class="wrap mx-auto  py-3 flex flex-row justify-between">
+	<div class="contain 2xl:max-w-7xl mx-auto px-6 flex flex-row justify-between">
 		<div id="now-logo" class="w-20 h-8 flex flex-row">
 			<?= (has_custom_logo()) ? the_custom_logo() : ''; ?>
 		</div>

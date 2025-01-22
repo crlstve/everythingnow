@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="my-12 md:my-20 flex flex-col gap-8 md:gap-12">
+<main class="contain 2xl:max-w-7xl mx-auto px-6">
 <?php //bloginfo( 'name' ); ?>
 <?php //bloginfo( 'description' ); ?>
 

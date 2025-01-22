@@ -1,4 +1,4 @@
-        <footer class="w-full py-6">
+        <footer class="contain 2xl:max-w-7xl mx-auto px-6">
             <div class="wrap pb-6 flex flex-row flex-wrap justify-between">
                 <?php 
                     dynamic_sidebar( 'footer_1' ); 
