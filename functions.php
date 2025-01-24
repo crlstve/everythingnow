@@ -36,12 +36,12 @@
 		add_action( 'wp_enqueue_scripts', 'now_register_styles' );
 
 			// Now css for editor
-				// Add backend styles for Gutenberg.
+				/* Add backend styles for Gutenberg.
 					function now_editor_assets() {
 					// Load the theme styles within Gutenberg.
 					wp_enqueue_style('now-editor-styles',get_stylesheet_directory_uri() . '/assets/css/theme.css',FALSE);
 					}
-					add_action('enqueue_block_editor_assets', 'now_editor_assets');
+					add_action('enqueue_block_editor_assets', 'now_editor_assets');*/
 
 	// Carga js
 		function now_register_scripts() {
@@ -219,6 +219,35 @@
 				));
 			}
 		} */
+
+
+/*******************************************************************************
+ *  PÁGINA DE OPCIONES
+ ******************************************************************************/
+		add_action( 'admin_menu', 'now_page_menu' );
+		function now_page_menu(){
+			add_menu_page(
+				'Opciones', // page <title>Title</title>
+				'Opciones', // link text
+				'manage_options', // user capabilities
+				'now-options', // menu slug
+				'now_page_menu_callback', // this function prints the page content
+				'dashicons-admin-generic', // icon (from Dashicons for example)
+				4 // menu position
+			);
+		}
+		
+		function now_page_menu_callback(){
+			echo '<div class="wrap">';
+			echo '<h1>Opciones</h1>';
+			echo '<form method="post" action="options.php">';
+				settings_fields('now_options');
+				do_settings_sections('now_options');
+				submit_button();
+		}
+
+
+
 /*******************************************************************************
  *  CARGA DE ELEMENTOS
  ******************************************************************************/
@@ -258,47 +287,47 @@
 		}
 
 	// Now create footer widgets
-	function now_footer_widets() {
-	    register_sidebar( array(
-	        'name'          => 'Footer 1',
-	        'id'            => 'footer_1',
-	        'before_widget' => '<div class="footer-content dark:text-white">',
-	        'after_widget'  => '</div>',
-	        'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
-	        'after_title'   => '</span>',
-	    ) );
-	    register_sidebar( array(
-	        'name'          => 'Footer 2',
-	        'id'            => 'footer_2',
-	        'before_widget' => '<div class="footer-content dark:text-white">',
-	        'after_widget'  => '</div>',
-	        'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
-	        'after_title'   => '</span>',
-	    ) );
-	    register_sidebar( array(
-	        'name'          => 'Footer 3',
-	        'id'            => 'footer_3',
-	        'before_widget' => '<div class="footer-content dark:text-white">',
-	        'after_widget'  => '</div>',
-	        'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
-	        'after_title'   => '</span>',
-	    ) );
-	    register_sidebar( array(
-	        'name'          => 'Footer 4',
-	        'id'            => 'footer_4',
-	        'before_widget' => '<div class="footer-content dark:text-white">',
-	        'after_widget'  => '</div>',
-	        'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
-	        'after_title'   => '</span>',
-	    ) );
-	        register_sidebar( array(
-	        'name'          => 'Footer Social Media',
-	        'id'            => 'footer_rrss',
-	        'before_widget' => '<div class="footer-content dark:text-white">',
-	        'after_widget'  => '</div>',
-	        'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
-	        'after_title'   => '</span>',
-	    ) );    
+		function now_footer_widets() {
+			register_sidebar( array(
+				'name'          => 'Footer 1',
+				'id'            => 'footer_1',
+				'before_widget' => '<div class="footer-content dark:text-white">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
+				'after_title'   => '</span>',
+			) );
+			register_sidebar( array(
+				'name'          => 'Footer 2',
+				'id'            => 'footer_2',
+				'before_widget' => '<div class="footer-content dark:text-white">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
+				'after_title'   => '</span>',
+			) );
+			register_sidebar( array(
+				'name'          => 'Footer 3',
+				'id'            => 'footer_3',
+				'before_widget' => '<div class="footer-content dark:text-white">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
+				'after_title'   => '</span>',
+			) );
+			register_sidebar( array(
+				'name'          => 'Footer 4',
+				'id'            => 'footer_4',
+				'before_widget' => '<div class="footer-content dark:text-white">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
+				'after_title'   => '</span>',
+			) );
+				register_sidebar( array(
+				'name'          => 'Footer Social Media',
+				'id'            => 'footer_rrss',
+				'before_widget' => '<div class="footer-content dark:text-white">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<span data-class="footer-title" class="font-bold dark:text-white">',
+				'after_title'   => '</span>',
+			) );    
 
-	}
+		}
 	    add_action( 'widgets_init', 'now_footer_widets' );
