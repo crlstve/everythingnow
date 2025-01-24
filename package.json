@@ -1,28 +1,38 @@
 {
   "name": "everythingnow",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "description": "Elegant theme for Wordpress that uses technologies like tailwindcss, splidejs, threejs to achieve all the effects.",
+  "keywords": [
+    "Tailwindcss",
+    "Splidejs"
+  ],
+  "homepage": "https://github.com/crlstve/everythingnow#readme",
+  "bugs": {
+    "url": "https://github.com/crlstve/everythingnow/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/crlstve/everythingnow.git"
+  },
+  "license": "ISC",
+  "author": "cesteve",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "npm run test",
-    "dev": "npm run development",
-    "prod": "npm run production",
-    "development": "mix",
-    "watch": "mix watch",
-    "watch-poll": "mix watch -- --watch-options-poll=1000",
-    "hot": "mix watch --hot",
-    "production": "mix --production"
-  },
-  "author": "cesteve",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "cross-env": "^7.0.3",
-    "laravel-mix": "^6.0.49",
-    "tailwindcss": "^3.4.3"
+    "dev": "tailwindcss -i ./theme.css -o ./assets/css/theme.css --watch",
+    "prod": "tailwindcss -i ./theme.css -o ./assets/css/theme.css --minify"
+
   },
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
-    "postcss": "^8.5.1",
-    "postcss-nested": "^6.2.0"
+    "@tailwindcss/cli": "^4.0.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "postcss": "^8.5.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "tailwindcss": "^4.0.0"
   }
 }
