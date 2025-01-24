@@ -253,7 +253,7 @@
  ******************************************************************************/
 	// Now Logo
 		function now_logo($html) {
-			$html = str_replace('custom-logo-link', 'w-full self-center', $html);
+			$html = str_replace('custom-logo-link', 'w-full self-center dark:invert', $html);
 			$html = preg_replace('/(<img(.*?)class="([^"]*)")/', '$1 title="Everything Now" width="300" height="73" class="$3 w-24"', $html);
 			return $html;
 		}
@@ -271,12 +271,24 @@
 		}
 		add_action( 'init', 'now_menu' );
 
-	// Now SVG
-		function allow_svg_upload( $mimes ) {
-			$mimes['svg'] = 'image/svg+xml';
+	// Now SVG & AVIF
+		function permitir_svg_y_avif($mimes) {
+			$mimes['svg'] = 'image/svg+xml'; 
+			$mimes['avif'] = 'image/avif';   
 			return $mimes;
 		}
-		add_filter( 'upload_mimes', 'allow_svg_upload' );
+		add_filter('upload_mimes', 'permitir_svg_y_avif');
+
+		// Sanitizar SVG
+		function sanitizar_svg($data, $file, $filename, $mimes) {
+			if (isset($mimes['svg']) && pathinfo($filename, PATHINFO_EXTENSION) === 'svg') {
+				$data['ext'] = 'svg';
+				$data['type'] = 'image/svg+xml';
+			}
+			return $data;
+		}
+		add_filter('wp_check_filetype_and_ext', 'sanitizar_svg', 10, 4);
+
 
 	// Now custom var_dump
 		function now_var_dump($data) {
