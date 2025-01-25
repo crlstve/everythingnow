@@ -5,14 +5,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class('min-h-dvh bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[--bg-primary] via-[--bg-via] to-[--bg-secundary] dark:from-[--bg-primary-dark] dark:via-[--bg-via-dark] dark:to-[--bg-secundary-dark] crt'); ?>>
+<body <?php body_class('min-h-dvh bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[--bg-primary] via-[--bg-via] to-[--bg-secundary] dark:from-[--bg-primary-dark] dark:via-[--bg-via-dark] dark:to-[--bg-secundary-dark]'); ?>>
 <?php wp_body_open(); ?>
-<header id="now-header" class="sticky top-0 py-4">
+<header id="now-header" class="sticky top-4 py-4 backdrop-blur-sm shadow-md shadow-slate-950/20 dark:border-slate-600 dark:bg-[rgba(0,0,0,0.1)] bg-[rgba(255,255,255,0.1)] duration-500 top-0 left-0 right-0 bottom-0 w-11/12 justify-center mx-auto rounded-lg
+
+">
 	<div class="contain 2xl:max-w-7xl mx-auto px-6 flex flex-row justify-between">
 		<div id="now-logo" class="w-20 h-8 flex flex-row">
 			<?= (has_custom_logo()) ? the_custom_logo() : ''; ?>
 		</div>
 		<nav id="mega-menu" class="self-center dark:text-white">
+				<svg data-contoller="menu" class="z-10 cursor-pointer md:hidden w-10 h-10 aspect-square  sound rounded-lg p-2 backdrop-blur-sm shadow-md shadow-slate-950/20 border-l border-t border-white dark:border-slate-600 dark:bg-[rgba(0,0,0,0.1)] bg-[rgba(255,255,255,0.1)] flex justify-center" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23" viewBox="0,0,260,260">
+                <g class="dark:fill-white fill-slate-600" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M3,9c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h44c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587zM3,24c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h44c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587zM3,39c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h44c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587z"></path></g></g>
+                </svg>
 			<?php wp_nav_menu(); ?>
 		</nav>
             <button id="btn_mode" aria="menu item" aria-label="Modo oscuro" class="sound group p-2 rounded-full aspect-square bg-transparent relative border-l border-t border-white hover:border-slate-300 hover:dark:border-slate-950 dark:border-slate-600 backdrop-blur hover:backdrop-blur-none shadow-md hover:shadow-inner overflow-hidden" onclick="toggleDarkMode();">
