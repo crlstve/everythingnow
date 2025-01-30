@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="contain 2xl:max-w-7xl mx-auto px-6">
+<main class="contain 2xl:max-w-7xl mx-auto px-6 my-16">
 <?php //bloginfo( 'name' ); ?>
 <?php //bloginfo( 'description' ); ?>
 
