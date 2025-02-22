@@ -271,24 +271,34 @@
 		}
 		add_action( 'init', 'now_menu' );
 
+		
 	// Now SVG & AVIF
-		function permitir_svg_y_avif($mimes) {
-			$mimes['svg'] = 'image/svg+xml'; 
-			$mimes['avif'] = 'image/avif';   
+// Permitir subir archivos SVG, AVIF y WebP
+		function allow_image_files($mimes) {
+			$mimes['svg'] = 'image/svg+xml';
+			$mimes['avif'] = 'image/avif';
+			$mimes['webp'] = 'image/webp'; // Soporte para WebP
 			return $mimes;
 		}
-		add_filter('upload_mimes', 'permitir_svg_y_avif');
+		add_filter('upload_mimes', 'allow_image_files');
 
-		// Sanitizar SVG
-		function sanitizar_svg($data, $file, $filename, $mimes) {
+		// Sanitizar SVG y WebP
+		function sanitizar_archivos($data, $file, $filename, $mimes) {
+			// Sanitizar SVG
 			if (isset($mimes['svg']) && pathinfo($filename, PATHINFO_EXTENSION) === 'svg') {
 				$data['ext'] = 'svg';
 				$data['type'] = 'image/svg+xml';
 			}
+
+			// Sanitizar WebP
+			if (isset($mimes['webp']) && pathinfo($filename, PATHINFO_EXTENSION) === 'webp') {
+				$data['ext'] = 'webp';
+				$data['type'] = 'image/webp';
+			}
+
 			return $data;
 		}
-		add_filter('wp_check_filetype_and_ext', 'sanitizar_svg', 10, 4);
-
+		add_filter('wp_check_filetype_and_ext', 'sanitizar_archivos', 10, 4);
 
 	// Now custom var_dump
 		function now_var_dump($data) {
